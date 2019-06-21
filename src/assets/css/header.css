@@ -1,0 +1,366 @@
+body{
+    margin:0;
+}
+/**
+过渡动画 start
+*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 10000;
+}
+
+#preloader #preloader-inner {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498dba6;
+  animation: spin 2s linear infinite;
+}
+
+#preloader #preloader-inner:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74d3cad;
+  animation: spin 3s linear infinite;
+}
+
+#preloader #preloader-inner:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9ca22a9;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/**
+过渡动画 end
+*/
+
+/**
+header start 
+*/
+.header {
+  width: 100%;
+  height: 80px;
+  line-height: 60px;
+  -webkit-transition: all .3s ease;
+  /*-webkit-用于支持Safari浏览器*/
+  transition: all .3s ease;
+  /*过渡：并使所有元素有一个0.3秒的减缓过渡*/
+  position: fixed;
+  /*固定位置*/
+   z-index: 1000;
+  /*堆叠顺序，高值在上*/
+  top: 0;
+  /*绝对定位，上距离0*/
+  background: #fff;
+  color: #727374;
+  font-size: 1.05rem;
+  display: block;
+}
+
+.max-header {
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+.max-logo {
+  height: 50px;
+  width: 80px;
+  margin-bottom: 25px;
+  margin-left: 80px;
+}
+
+.max-header-nav {
+  width: calc(100% - 300px);
+  display: inline-block;
+}
+
+.max-header-nav ul {
+  float: right;
+  list-style: none;
+  margin-top: 15px;
+}
+
+.max-header-nav ul li {
+  float: left;
+  margin-left: 45px;
+  cursor: pointer;
+}
+
+.max-header-nav ul li:hover {
+  color: #4aa4bb
+}
+
+
+.middle-min-header {
+  display: none;
+}
+
+#mo-nav {
+  display: none;
+}
+
+#searchBar{
+    display: none;
+}
+
+#searchBar.open{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top:80px;
+    text-align: center;
+}
+
+.max-header-nav ul li.open{
+    color: #0291aa;
+}
+
+.m-search form {
+    width: 100%;
+    height: 60px;
+    background-color: #fafafa;
+  }
+
+.m-search input {
+    width: 90%;
+    height: 40px;
+    border: 0;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 20px;
+    outline: none;
+  }
+
+
+/*关键分辨率，768,992,1200*/
+/*<=992的设备样式*/
+@media (max-width: 991px) {
+  .max-header {
+    display: none;
+    /*max-header隐藏掉*/
+  }
+
+  .middle-min-header {
+    display: block;
+    width: 100%;
+    height: 80px;
+  }
+
+  .fold-nav {
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    width: 50px;
+    height: 50px;
+  }
+
+  .min-logo {
+    height: 50px;
+    width: 80px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 15px;
+  }
+
+  /*导航栏折叠动画*/
+  .fold-nav .icon {
+    transition-duration: 0.2s;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(117, 115, 115);
+    top: 40px;
+    left: 20px;
+  }
+
+  .fold-nav .icon:before,
+  .fold-nav .icon:after {
+    transition-duration: 0.5s;
+    background-color: rgb(117, 115, 115);
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    left: 0px;
+  }
+
+  .fold-nav .icon:before {
+    top: -8px;
+  }
+
+  .fold-nav .icon:after {
+    top: 8px;
+  }
+
+  .fold-nav.open .icon {
+    background-color: transparent;
+  }
+
+  .fold-nav.open .icon:before,
+  .fold-nav.open .icon:after {
+    top: 0;
+  }
+
+  .fold-nav.open .icon:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background: rgb(117, 115, 115);
+  }
+
+  .fold-nav.open .icon:after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    background: rgb(117, 115, 115);
+  }
+
+  /*左侧导航栏打开样式*/
+  #mo-nav {
+    display: block;
+    transition-duration: 0.5s;
+    background-color: rgb(255, 255, 255);
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* border-radius: 0px 0px 5px 5px;
+    -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1); */
+    margin-top: 80px;
+    min-height: 100%;
+  }
+
+  #mo-nav .m-avatar {
+    width: 250px;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px 0 20px;
+    text-align: center;
+  }
+
+  #mo-nav .m-avatar img {
+    width: 90px;
+    height: 90px;
+    max-width: 90px;
+    border-radius: 100%;
+    border: 6px solid #21ac6b33
+  }
+
+  #mo-nav .m-search form {
+    width: 100%;
+    height: 50px;
+    background-color: #fafafa;
+  }
+
+  #mo-nav .m-search input {
+    width: 90%;
+    height: 30px;
+    border: 0;
+    margin-top: 10px;
+    margin-left:5%;
+    text-align: center;
+    border-radius: 15px;
+    outline: none;
+  }
+
+  #mo-nav .nav-list {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #mo-nav .nav-list div{
+      margin-top:15px;
+      color: #727374;
+      cursor: pointer;
+  }
+
+  #mo-nav .nav-list div:hover {
+    color: #4aa4bb
+  }
+
+  #mo-nav.open {
+    width: auto;
+    height: auto;
+  }
+
+  #searchBar{
+    display: none;
+  }
+  
+  #searchBar.open{
+    display: none;
+  }
+}
+
+/**
+header end
+**/
+
+/*home页*/
+#page {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #4aa4bb;
+  margin-top:80px;
+}
+
+#page.open{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #4aa4bb;
+    margin-top:0px;
+}
+
+@media (max-width: 991px) {
+    #page {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #4aa4bb;
+        margin-top:0px;
+      }
+}
+
+/*home页*/
