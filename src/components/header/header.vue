@@ -3,7 +3,7 @@
     <div class="header">
       <!--大分辨率的header-->
       <div class="max-header">
-        <img src="@/assets/icon/akina.png" class="max-logo">
+        <img src="@/assets/icon/leaf.png" class="max-logo">
         <img>
         <div class="max-header-nav">
           <ul>
@@ -23,7 +23,7 @@
         <div :class="foldNavClass" @click="open">
           <div class="icon"></div>
         </div>
-        <img src="@/assets/icon/akina.png" class="min-logo">
+        <img src="@/assets/icon/leaf.png" class="min-logo">
         <img>
       </div>
       <!--小分辨率header end-->

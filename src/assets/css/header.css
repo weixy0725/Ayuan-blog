@@ -85,7 +85,7 @@ header start
   /*堆叠顺序，高值在上*/
   top: 0;
   /*绝对定位，上距离0*/
-  background: #fff;
+  background: rgba(255, 255, 255, 0.603);
   color: #727374;
   font-size: 1.05rem;
   display: block;
@@ -142,7 +142,8 @@ header start
     display: block;
     width: 100%;
     height: auto;
-    margin-top:80px;
+    margin-top:80px; 
+    /* top:80px; */
     text-align: center;
 }
 
@@ -341,7 +342,6 @@ header end
   display: block;
   width: 100%;
   height: 100%;
-  background: #4aa4bb;
   margin-top:80px;
 }
 
@@ -349,7 +349,6 @@ header end
     display: block;
     width: 100%;
     height: 100%;
-    background: #4aa4bb;
     margin-top:0px;
 }
 
@@ -358,7 +357,6 @@ header end
         display: block;
         width: 100%;
         height: 100%;
-        background: #4aa4bb;
         margin-top:0px;
       }
 }
