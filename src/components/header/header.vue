@@ -44,17 +44,18 @@
         <div @click="toDesign()">插画与设计</div>
         <div @click="toOther()">杂记</div>
         <div @click="toAboutMe()">About me</div>
+        <div> </div>
       </div>
     </div>
     <!--左侧导航栏 end-->
     <!--搜索工具栏-->
-    <div id="searchBar" :class="searchOpenClass">
+    <!-- <div id="searchBar" :class="searchOpenClass">
       <div class="m-search">
         <form class="m-search-form" method="post" action role="search">
           <input class="m-search-input" type="search" name="inputSearch" placeholder="输入搜索内容...">
         </form>
       </div>
-    </div>
+    </div> -->
     <!--搜索工具栏 end-->
     <!--过渡动画-->
     <div id="preloader" v-show="preloaderShow">
@@ -69,7 +70,7 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      preloaderShow: false, //过渡动画显示/隐藏
+      preloaderShow: true, //过渡动画显示/隐藏
       removeTimer: "", //过渡动画移除延时器
       show: true,
       foldNavClass: "fold-nav",

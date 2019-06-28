@@ -1,95 +1,97 @@
 #centerbg {
-    width:100%;
-    z-index: 0;
-    height: 550px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-size: cover;
-    z-index:-1;
-    } 
-    
-    .slant-left {
-    background: #fff;
-    width: 101%;
-    position: absolute;
-    bottom: -80px;
-    right: 48%;
-    height: 200px;
-    -webkit-transform: rotate(6deg);
-    -moz-transform: rotate(6deg);
-    -ms-transform: rotate(6deg);
-    -o-transform: rotate(6deg);
-    transform: rotate(6deg);
-    }
-    
-    .slant-right {
-    background: #fff;
-    width: 101%;
-    position: absolute;
-    bottom: -80px;
-    left: 48%;
-    height: 200px;
-    -webkit-transform: rotate(-6deg);
-    -moz-transform: rotate(-6deg);
-    -ms-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
-    transform: rotate(-6deg);
-    }
-    
-    
-    .focusinfo {
-    position: relative;
-    max-width:800px;
-    padding:0 10px;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    text-align: center;
-    }
-    
-    .focusinfo img {
-    width: 80px;
-    height: auto;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    }
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+  height: 850px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* z-index:-1; */
+}
 
-    .header-info {
-        width: 60%;
-        margin: auto;
-        font-size: 20px;
-        color: rgb(87, 85, 85);
-        background: rgba(248, 248, 248, 0.301);
-        padding: 20px 30px;
-        margin-top: 30px;
-        font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
-        letter-spacing: 1px;
-        line-height: 30px;
-        }
-        
-        .header-info p {
-        margin:0
-        }
-    
-    .top-social {
-        height: 32px;
-        margin-top: 30px;
-        margin-left: 10px;
-        list-style: none;
-        display: inline-block;
-        font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
-        }
-        
-        .top-social img {
-        height: 32px;
-        width:32px;
-        background: white;
-        }
-        
-        .top-social li {
-        float:left;
-        margin-right:10px
-        }
-        
+
+.slant-left {
+  background: #fff;
+  width: 101%;
+  position: absolute; 
+  bottom: -80px;
+  right: 48%;
+  height: 200px;
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
+  transform: rotate(6deg);
+}
+
+.slant-right {
+  background: #fff;
+  width: 101%;
+  position: absolute;
+  bottom: -80px;
+  left: 48%;
+  height: 200px;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+}
+
+
+.focusinfo {
+  position: relative;
+  max-width: 800px;
+  padding: 0 10px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.focusinfo img {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.header-info {
+  width: 60%;
+  margin: auto;
+  font-size: 20px;
+  color: rgb(87, 85, 85);
+  background: rgba(248, 248, 248, 0.301);
+  padding: 20px 30px;
+  margin-top: 30px;
+  font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.header-info p {
+  margin: 0
+}
+
+.top-social {
+  height: 32px;
+  margin-top: 30px;
+  margin-left: 10px;
+  list-style: none;
+  display: inline-block;
+  font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+}
+
+.top-social img {
+  height: 32px;
+  width: 32px;
+  background: white;
+}
+
+.top-social li {
+  float: left;
+  margin-right: 10px
+}

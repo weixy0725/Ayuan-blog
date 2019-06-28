@@ -81,11 +81,11 @@ header start
   /*过渡：并使所有元素有一个0.3秒的减缓过渡*/
   position: fixed;
   /*固定位置*/
-   z-index: 1000;
+   z-index: 100;
   /*堆叠顺序，高值在上*/
   top: 0;
   /*绝对定位，上距离0*/
-  background: rgba(255, 255, 255, 0.603);
+  background: rgba(255, 255, 255, 0.3);
   color: #727374;
   font-size: 1.05rem;
   display: block;
@@ -95,6 +95,7 @@ header start
   width: 100%;
   height: 80px;
   display: block;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .max-logo {
@@ -139,19 +140,21 @@ header start
 }
 
 #searchBar.open{
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-top:80px; 
-    /* top:80px; */
-    text-align: center;
+  text-align: center;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 99;
 }
 
 .max-header-nav ul li.open{
     color: #0291aa;
 }
 
-.m-search form {
+/* .m-search form {
     width: 100%;
     height: 60px;
     background-color: #fafafa;
@@ -165,7 +168,7 @@ header start
     text-align: center;
     border-radius: 20px;
     outline: none;
-  }
+  } */
 
 
 /*关键分辨率，768,992,1200*/
@@ -180,6 +183,7 @@ header start
     display: block;
     width: 100%;
     height: 80px;
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .fold-nav {
@@ -251,20 +255,22 @@ header start
 
   /*左侧导航栏打开样式*/
   #mo-nav {
+    position: fixed;
     display: block;
     transition-duration: 0.5s;
     background-color: rgb(255, 255, 255);
     width: 0;
     height: 0;
-    top: 0;
+    top: 80px;
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
     /* border-radius: 0px 0px 5px 5px;
     -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1); */
-    margin-top: 80px;
-    min-height: 100%;
+    /* margin-top: 80px; */
+    /* min-height: 100%; */
+    z-index:99;
   }
 
   #mo-nav .m-avatar {
@@ -320,7 +326,7 @@ header start
   }
 
   #mo-nav.open {
-    width: auto;
+    width: 100%;
     height: auto;
   }
 
@@ -346,18 +352,22 @@ header end
 }
 
 #page.open{
+    /* position:absolute;
     display: block;
     width: 100%;
     height: 100%;
-    margin-top:0px;
+    top:0px;
+    z-index: 1; */
 }
 
 @media (max-width: 991px) {
     #page {
+        /* position:absolute;
         display: block;
         width: 100%;
         height: 100%;
-        margin-top:0px;
+        top:0px;
+         z-index: 1; */
       }
 }
 
