@@ -85,7 +85,7 @@ header start
   /*堆叠顺序，高值在上*/
   top: 0;
   /*绝对定位，上距离0*/
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   color: #727374;
   font-size: 1.05rem;
   display: block;
@@ -95,7 +95,7 @@ header start
   width: 100%;
   height: 80px;
   display: block;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .max-logo {
@@ -290,21 +290,25 @@ header start
     border: 6px solid #21ac6b33
   }
 
-  #mo-nav .m-search form {
-    width: 100%;
-    height: 50px;
-    background-color: #fafafa;
-  }
 
   #mo-nav .m-search input {
-    width: 90%;
+    display: inline-block;
+    width: 80%;
     height: 30px;
-    border: 0;
-    margin-top: 10px;
+    border: 1px solid #727374;
     margin-left:5%;
     text-align: center;
     border-radius: 15px;
     outline: none;
+  }
+
+  #mo-nav .m-search button{
+    border: 1px solid #727374;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    background: #fff;
+    cursor: pointer;
   }
 
   #mo-nav .nav-list {

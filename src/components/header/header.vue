@@ -34,9 +34,8 @@
         <img src="@/assets/icon/leaf.png">
       </div>
       <div class="m-search">
-        <form class="m-search-form" method="post" action role="search">
-          <input class="m-search-input" type="search" name="inputSearch" placeholder="输入搜索内容...">
-        </form>
+        <input placeholder="输入搜索内容...">
+        <button><i class="iconfont icon-alisousuo"></i></button>
       </div>
       <div class="nav-list">
         <div @click="toHome()">首页</div>
