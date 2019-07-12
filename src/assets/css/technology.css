@@ -1,0 +1,54 @@
+.tech-page {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+}
+
+.tech-articles {
+  display: block;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.tech-articles ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.classification-select {
+  height: 35px;
+  display: block;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.downSelect{
+    height:35px;
+    width:15%;
+    color:#32aa66!important;
+    border-bottom:2px solid #32aa66!important;
+    text-align: center;
+    font-size:18px;
+    font-weight: 200;
+}
+
+#downOptions{
+  display: none;
+}
+
+#downOptions .open{
+    display:block;
+    width: 30%;
+    height: 150px;
+}
+
+.tech-list{
+ display: block;
+ margin-top:20px;
+}
+@media (max-width: 991px) {
+  .tech-nav {
+    display: none;
+  }
+}

@@ -48,13 +48,12 @@
     </div>
     <!--左侧导航栏 end-->
     <!--搜索工具栏-->
-    <!-- <div id="searchBar" :class="searchOpenClass">
-      <div class="m-search">
-        <form class="m-search-form" method="post" action role="search">
-          <input class="m-search-input" type="search" name="inputSearch" placeholder="输入搜索内容...">
-        </form>
-      </div>
-    </div> -->
+    <div id="searchBar" :class="searchOpenClass">
+       <div class="m-search">
+        <input placeholder="输入搜索内容...">
+        <button><i class="iconfont icon-alisousuo"></i></button>
+       </div>
+    </div>
     <!--搜索工具栏 end-->
     <!--过渡动画-->
     <div id="preloader" v-show="preloaderShow">
