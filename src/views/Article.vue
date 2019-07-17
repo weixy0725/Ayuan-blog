@@ -1,13 +1,14 @@
 <template>
   <div class="article-page">
     <div class="article">
-    <div class="title">       
+    <div class="title">    
       <div v-if="isOriginal==3" class="ui label copy">临摹</div>
       <div v-if="isOriginal==2" class="ui label practice">练习</div>
       <div v-if="isOriginal==1" class="ui label own">原创</div>
       <div v-if="isOriginal==0" class="ui label other">转载</div>   
       <div v-if="isOriginal==4" class="ui label learn">学习</div>  
       <div class="title-content">{{articleName}}</div>
+      <div class="d-line"></div>  
     </div>
     <div class="content">
        <div v-html="articleContent"></div>

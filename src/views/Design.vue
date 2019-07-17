@@ -88,6 +88,14 @@ export default {
   },
   methods: {
     ...mapMutations(["changeOpenClass","changePreloaderShow"]),
+    handleSizeChange(val) {
+      this.pageSize = val;
+      this.search();
+    },
+    handleCurrentChange(val) {
+      this.pageNumber = val;
+      this.search();
+    },
     changeSelect() {
       if (this.selectShow) {
         this.selectOpen = "";
