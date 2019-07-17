@@ -1,3 +1,11 @@
+/*home页*/
+#page {
+  display: block;
+  width: 100%;
+  min-height: calc(100vh - 400px);
+  margin-top:80px;
+}
+
 .headertop {
   position: relative;
   overflow: hidden;
@@ -6,11 +14,21 @@
 
 #centerbg {
   width: 100%;
-  height: 750px;
+  height: 650px;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  z-index: -2;
+}
+
+#centerbg .test{
+  width:70%;
+  height: 750px;
+  margin-left:15%;
+  /* background: rgba(83, 83, 83, 0.15);  */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.3) 64%, rgba(255, 255, 255, 0.7) 100%);
+  /* border: 1px solid rgba(146, 146, 146, 0.8); */
   z-index: -1;
 }
 
@@ -44,7 +62,7 @@
 }
 
 
-.focusinfo {
+.own-panel {
   position: relative;
   max-width: 800px;
   padding: 0 10px;
@@ -55,19 +73,19 @@
   text-align: center;
 }
 
-.focusinfo img {
+.own-panel img {
   width: 80px;
   height: auto;
   border-radius: 50%;
-  border: 3px solid rgba(150, 147, 147, 0.3);
+  /* border: 3px solid rgba(150, 147, 147, 0.3); */
 }
 
-.header-info {
+.own-info {
   width: 60%;
   margin: auto;
   font-size: 20px;
   color: rgb(255, 255, 255);
-  background: rgba(41, 41, 41, 0.726);
+  /* background: rgba(71, 71, 71, 0.726); */
   padding: 20px 30px;
   margin-top: 30px;
   font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
@@ -75,11 +93,11 @@
   line-height: 30px;
 }
 
-.header-info p {
+.own-info p {
   margin: 0
 }
 
-.top-social {
+.own-social {
   height: 32px;
   margin-top: 30px;
   margin-left: 10px;
@@ -88,13 +106,14 @@
   font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
 }
 
-.top-social img {
-  height: 32px;
-  width: 32px;
-  background: white;
+.own-social img {
+  height: 25px;
+  width: 25px;
+  background: rgba(255, 255, 255, 1);
+  border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
-.top-social li {
+.own-social li {
   float: left;
   margin-right: 10px
 }
@@ -104,6 +123,7 @@
   margin-top: 3%;
   margin-left: 15%;
   margin-right: 15%;
+  height: 320px;
 }
 
 .recommend h3 {
@@ -115,7 +135,7 @@
 }
 
 .recommend-one {
-  display: inline-block;
+  box-sizing: border-box;
   margin-top: 15px;
   width: 32%;
   margin-left: 0.5%;
@@ -123,11 +143,12 @@
   background-size: cover;
   vertical-align: top;
   border-radius: 5%;
+  float:left;
 
 }
 
 .recommend-two {
-  display: inline-block;
+  box-sizing: border-box;
   margin-top: 15px;
   width: 32%;
   height: 230px;
@@ -135,17 +156,21 @@
   background-size: cover;
   vertical-align: top;
   border-radius: 5%;
+  float:left;
 }
 
 .recommend-three {
-  display: inline-block;
+  box-sizing: border-box;
   margin-top: 15px;
   width: 32%;
   height: 230px;
   margin-left: 1%;
   background-size: cover;
   border-radius: 5%;
+  float:left;
 }
+
+.clearfix{overflow:auto;_height:1%}/*浮动闭合 _height针对ie6,好神奇*/
 
 .recommend span {
   /* position: absolute; */
@@ -155,8 +180,9 @@
   text-align: center;
   line-height: 230px;
   background: rgb(255, 255, 255);
-  color: rgb(3, 116, 72);
+  color: rgb(146, 140, 140);
   font-size: 16px;
+  overflow: hidden;
   opacity: 0;
 }
 
@@ -181,9 +207,9 @@
 }
 
 @media (max-width: 991px) {
-  .recommend {
+  /* .recommend {
     display: none;
-  }
+  } */
 }
 
 .recent {
@@ -201,23 +227,23 @@
   border-bottom: 1px dashed #c7c8c9;
 }
 
-.recent-articles {
+.recent .recent-articles {
   margin-top: 25px;
   display: block;
 }
 
-.recent-articles ul,
+.recent .recent-articles ul,
 li {
   padding: 0;
   margin-top: 0;
   list-style-type: none;
 }
 
-.recent-articles ul>li{
+.recent .recent-articles ul>li{
   display: block;
 }
 
-.recent-articles .title {
+.recent .recent-articles .title {
   margin-top:20px;
   display: block;
   width: 100%;
@@ -227,42 +253,43 @@ li {
   font-weight: 200;
 }
 
-.title .t-classification {
+.recent .title .t-classification {
   display: inline-block;
   word-wrap: break-word;
   color:#5e9be0;
 }
 
-.title .title-content {
+.recent .title .title-content {
   display: inline-block;
   word-wrap: break-word;
 }
 
-.content{
+.recent .content{
   min-height: 50px;
   text-indent: 2em;
 }
 
-.content,.article-footer{
+.recent .content,.article-footer{
   display: block;
   margin-top:18px;
   color: #727374;
   font-weight: 200;
 }
 
-.article-footer{
+.recent .article-footer{
   text-align: right;
 }
 
-.f-classification,.f-time,.eye,.message{
+.recent .f-classification,.f-time,.eye,.message{
    display: inline-block;
+   font-size:15px;
 }
 
-.f-time,.eye,.message{
+.recent .f-time,.eye,.message{
   margin-left:15px;
 }
 
-.divide{
+.recent .divide{
    display: block;
    width:40%;
    margin-left:30%;
@@ -270,16 +297,13 @@ li {
    border-bottom:1px dashed #c7c8c9;
 }
 
-.footer-divide{
+.recent .footer-divide{
   display: block;
   margin-top:5%;
   width:100%;
   border-bottom:1px solid #eaeaeb;
 }
 
-.home-footer{
-  text-align: center;
-  color:#727374;
-  margin-top:2%;
-  height:100px;
+.link-class{
+  text-decoration: none;
 }

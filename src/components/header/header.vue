@@ -3,7 +3,7 @@
     <div class="header">
       <!--大分辨率的header-->
       <div class="max-header">
-        <img src="@/assets/icon/leaf.png" class="max-logo">
+        <img src="@/assets/img/sakura-flower.png" class="max-logo">
         <img>
         <div class="max-header-nav">
           <ul>
@@ -20,18 +20,18 @@
       </div>
       <!--小分辨率header-->
       <div class="middle-min-header">
-        <div :class="foldNavClass" @click="open">
+        <div id="fold-nav" :class="openClass" @click="open">
           <div class="icon"></div>
         </div>
-        <img src="@/assets/icon/leaf.png" class="min-logo">
-        <img>
+        <!-- <img src="@/assets/img/sakura-flower.png" class="min-logo">
+        <img> -->
       </div>
       <!--小分辨率header end-->
     </div>
     <!--左侧导航栏-->
     <div id="mo-nav" :class="openClass">
       <div class="m-avatar">
-        <img src="@/assets/icon/leaf.png">
+        <img src="@/assets/img/sakura-flower.png">
       </div>
       <div class="m-search">
         <input placeholder="输入搜索内容...">
@@ -68,21 +68,19 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      preloaderShow: true, //过渡动画显示/隐藏
+      //preloaderShow: true, //过渡动画显示/隐藏
       removeTimer: "", //过渡动画移除延时器
-      show: true,
-      foldNavClass: "fold-nav",
       schShow: true
     };
   },
   computed: {
-    ...mapGetters(["openClass", "searchOpenClass"])
+    ...mapGetters(["openClass", "searchOpenClass","preloaderShow"])
   },
   methods: {
-    ...mapMutations(["changeOpenClass", "changeSearchOpenClass"]),
-    remove() {
-      this.preloaderShow = false;
-    },
+    ...mapMutations(["changeOpenClass", "changeSearchOpenClass","changePreloaderShow"]),
+    // remove() {
+    //      this.changePreloaderShow(false);
+    // },
     toHome() {
       this.$router.push("/");
     },
@@ -99,14 +97,10 @@ export default {
       this.$router.push("/aboutMe");
     },
     open() {
-      if (this.show) {
+      if (this.openClass=="") {
         this.changeOpenClass("open");
-        this.foldNavClass = this.foldNavClass + " " + this.openClass;
-        this.show = false;
       } else {
-        this.foldNavClass = "fold-nav";
         this.changeOpenClass("");
-        this.show = true;
       }
     },
     showSearch() {
@@ -120,7 +114,7 @@ export default {
     }
   },
   mounted() {
-    this.removeTimer = setInterval(this.remove, 2000); //延时执行隐藏
+    //this.removeTimer = setInterval(this.remove, 2000); //延时执行隐藏
   }
 };
 </script>

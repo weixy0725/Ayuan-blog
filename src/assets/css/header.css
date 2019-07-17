@@ -2,6 +2,10 @@ html,body{
     margin:0;
     /* scroll-behavior:smooth */
 }
+
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border:none 
+}/*去掉火狐浏览器中按钮点击产生的虚线框*/
 /**
 过渡动画 start
 */
@@ -101,7 +105,7 @@ header start
 
 .max-logo {
   height: 50px;
-  width: 80px;
+  width: 50px;
   margin-bottom: 25px;
   margin-left: 80px;
 }
@@ -182,6 +186,10 @@ header start
   vertical-align:middle;
 }
 
+#searchBar .m-search button:hover{
+   background-color:#d7f0fa;
+}
+
 
 .max-header-nav ul li.open{
     color: #0291aa;
@@ -203,7 +211,7 @@ header start
     background: rgba(255, 255, 255);
   }
 
-  .fold-nav {
+  #fold-nav {
     display: inline-block;
     cursor: pointer;
     background: none;
@@ -213,14 +221,14 @@ header start
 
   .min-logo {
     height: 50px;
-    width: 80px;
+    width: 50px;
     float: right;
     margin-right: 40px;
     margin-top: 15px;
   }
 
   /*导航栏折叠动画*/
-  .fold-nav .icon {
+  #fold-nav .icon {
     transition-duration: 0.2s;
     position: absolute;
     width: 30px;
@@ -230,8 +238,8 @@ header start
     left: 20px;
   }
 
-  .fold-nav .icon:before,
-  .fold-nav .icon:after {
+  #fold-nav .icon:before,
+  #fold-nav .icon:after {
     transition-duration: 0.5s;
     background-color: rgb(117, 115, 115);
     position: absolute;
@@ -241,30 +249,30 @@ header start
     left: 0px;
   }
 
-  .fold-nav .icon:before {
+  #fold-nav .icon:before {
     top: -8px;
   }
 
-  .fold-nav .icon:after {
+  #fold-nav .icon:after {
     top: 8px;
   }
 
-  .fold-nav.open .icon {
+  #fold-nav.open .icon {
     background-color: transparent;
   }
 
-  .fold-nav.open .icon:before,
-  .fold-nav.open .icon:after {
+  #fold-nav.open .icon:before,
+  #fold-nav.open .icon:after {
     top: 0;
   }
 
-  .fold-nav.open .icon:before {
+  #fold-nav.open .icon:before {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     background: rgb(117, 115, 115);
   }
 
-  .fold-nav.open .icon:after {
+  #fold-nav.open .icon:after {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     background: rgb(117, 115, 115);
@@ -304,7 +312,7 @@ header start
     height: 90px;
     max-width: 90px;
     border-radius: 100%;
-    border: 6px solid #21ac6b33
+    /* border: 6px solid #21ac6b33 */
   }
 
   #mo-nav .m-search{
@@ -316,7 +324,7 @@ header start
     width: 80%;
     height: 32px;
     border: 1px solid #a8a8a8;
-    border-radius: 16px;
+    border-radius: 16px 0 0 16px;
     margin-left:5%;
     text-align: center;
     outline: none;
@@ -328,12 +336,16 @@ header start
     border: 1px solid #a8a8a8;
     height: 36px;
     border: 1px solid #a8a8a8;
-    border-radius: 18px;
+    border-radius: 0 16px 16px 0;
     width: 10%;
     background: #fff;
     cursor: pointer;
     vertical-align:middle;
     outline: none;
+  }
+
+  #mo-nav .m-search button:hover{
+    background: #d7f0fa;
   }
 
   #mo-nav .nav-list {
@@ -373,32 +385,3 @@ header start
 header end
 **/
 
-/*home页*/
-#page {
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin-top:80px;
-}
-
-#page.open{
-    /* position:absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top:60px;
-    z-index: 1; */
-}
-
-@media (max-width: 991px) {
-    #page {
-        /* position:absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        top:0px;
-         z-index: 1; */
-      }
-}
-
-/*home页*/

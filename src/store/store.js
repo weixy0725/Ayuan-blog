@@ -4,12 +4,16 @@ Vue.use(Vuex)
 
 const state = {
     openClass:'',
-    searchOpenClass:''
+    searchOpenClass:'',
+    imgURLHeader:'http://39.105.221.186/',
+    preloaderShow:true
 };
 
 const getters = {
     openClass: state => state.openClass,
-    searchOpenClass:state=>state.searchOpenClass
+    searchOpenClass:state=>state.searchOpenClass,
+    imgURLHeader:state=>state.imgURLHeader,
+    preloaderShow:state=>state.preloaderShow
 };
 
 const mutations = {
@@ -18,6 +22,9 @@ const mutations = {
     },
     changeSearchOpenClass(state,data){
         state.searchOpenClass=data;
+    },
+    changePreloaderShow(state,data){
+       state.preloaderShow=data;
     }
 
 };

@@ -1,0 +1,41 @@
+.ui.label {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 0 0.14285714em;
+  background-image: none;
+  padding: 0.35em 0.5em;
+  text-transform: none;
+  font-weight: 300;
+  font-size: 0.8em;
+  border: 0 solid transparent;
+  border-radius: 0.14285714rem;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+  color: #fff !important;
+}
+
+.ui.label.own {
+  background-color: #77ac98 !important;
+  border-color: #77ac98 !important;
+}
+
+.ui.label.other {
+  background-color: #deab8a !important;
+  border-color: #deab8a !important;
+}
+
+.ui.label.practice {
+  background-color: #6babdf !important;
+  border-color: #6babdf !important;
+}
+
+.ui.label.copy {
+  background-color: #dad1cb !important;
+  border-color: #dad1cb !important;
+}
+
+.ui.label.learn {
+  background-color: #de8a91 !important;
+  border-color: #de8a91 !important;
+}

@@ -5,6 +5,7 @@ import Technology from '@/views/Technology'
 import Design from '@/views/Design'
 import Other from '@/views/Other'
 import AboutMe from '@/views/AboutMe'
+import Article from '@/views/Article'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/aboutMe',
       name: 'AboutMe',
       component: AboutMe
+    },
+    {
+      path: '/article',
+      name: 'Article',
+      component: Article
     }
   ]
 })
