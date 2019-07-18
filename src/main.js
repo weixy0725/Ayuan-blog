@@ -8,11 +8,13 @@ import router from './router'
 import axios from 'axios'
 import store from './store/store'
 import Vuex from 'vuex'
+import vueToTop from 'vue-totop'
 import './assets/icon/ali/iconfont.css'
 // import './assets/css/all.css'
 // import './common/fonts/font.css'
 Vue.use(ElementUI);
 Vue.use(Vuex)
+Vue.use(vueToTop)
 
 Vue.prototype.$axios = axios;
 Vue.prototype.host = '/api';

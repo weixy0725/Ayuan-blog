@@ -10,8 +10,9 @@
             <li @click="toHome()">首页</li>
             <li @click="toTech()">技术栈</li>
             <li @click="toDesign()">插画与设计</li>
-            <li @click="toOther()">杂记</li>
-            <li @click="toAboutMe()">About me</li>
+            <li @click="toOther()">文学</li>
+            <li @click="toOther()">游记</li>
+            <li @click="toAboutMe()">About Me</li>
             <li @click="showSearch()" :class="searchOpenClass">
               <i class="iconfont icon-alisousuo"></i>
             </li>
@@ -23,15 +24,15 @@
         <div id="fold-nav" :class="openClass" @click="open">
           <div class="icon"></div>
         </div>
-        <!-- <img src="@/assets/img/sakura-flower.png" class="min-logo">
-        <img> -->
+        <img src="@/assets/img/sakura-flower.png" class="min-logo">
+        <img>
       </div>
       <!--小分辨率header end-->
     </div>
     <!--左侧导航栏-->
     <div id="mo-nav" :class="openClass">
       <div class="m-avatar">
-        <img src="@/assets/img/sakura-flower.png">
+        <img src="http://39.105.221.186/touxiang.jpg">
       </div>
       <div class="m-search">
         <input placeholder="输入搜索内容...">
@@ -41,8 +42,9 @@
         <div @click="toHome()">首页</div>
         <div @click="toTech()">技术栈</div>
         <div @click="toDesign()">插画与设计</div>
-        <div @click="toOther()">杂记</div>
-        <div @click="toAboutMe()">About me</div>
+        <div @click="toOther()">文学</div>
+        <div @click="toOther()">游记</div>
+        <div @click="toAboutMe()">About Me</div>
         <div> </div>
       </div>
     </div>

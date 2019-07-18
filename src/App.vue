@@ -3,6 +3,7 @@
     <header-bar></header-bar>
     <router-view/>
     <footer-bar></footer-bar>
+    <vueToTop top=300 right=45 bottom=120 color=#757373 duration=200></vueToTop>
   </div>
 </template>
 

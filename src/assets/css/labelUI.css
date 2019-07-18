@@ -39,3 +39,10 @@
   background-color: #de8a91 !important;
   border-color: #de8a91 !important;
 }
+
+.ui.label.title {
+  background-color: #d1d1d1 !important;
+  border-color: #d1d1d1 !important;
+  /* color:#a1a1a1 !important; */
+  padding:0.35em 0;
+}
