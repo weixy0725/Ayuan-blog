@@ -2,7 +2,7 @@
   display: block;
   margin-top: 150px;
   width: 100%;
-  min-height: calc(100vh - 400px);
+  min-height: calc(100vh - 280px);
 }
 
 .tech-articles {
@@ -67,6 +67,7 @@ li {
 
 .pagination-bar{
   margin-top:8%;
+  margin-bottom: 2%;
   width: 100%; 
   text-align: center;
 }
@@ -131,20 +132,6 @@ li {
    margin-left:30%;
    margin-top:30px;
    border-bottom:1px dashed #c7c8c9;
-}
-
-.footer-divide{
-  display: block;
-  margin-top:5%;
-  width:100%;
-  border-bottom:1px solid #eaeaeb;
-}
-
-.home-footer{
-  text-align: center;
-  color:#727374;
-  margin-top:2%;
-  height:100px;
 }
 
 .link-class{

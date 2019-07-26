@@ -2,7 +2,7 @@
 #page {
   display: block;
   width: 100%;
-  min-height: calc(100vh - 400px);
+  min-height: calc(100vh - 280px);
   margin-top:80px;
 }
 
@@ -241,6 +241,10 @@ li {
 
 .recent .recent-articles ul>li{
   display: block;
+  /* padding:15px;
+  margin-bottom: 20px;
+  border: 1px dashed #59838a;
+  border-radius: 15px; */
 }
 
 .recent .recent-articles .title {
@@ -263,7 +267,8 @@ li {
 .recent .title .title-content {
   display: inline-block;
   word-wrap: break-word;
-  font-weight: 500;
+  font-weight: 550;
+  color:#737374;
 }
 
 .recent .content{

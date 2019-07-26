@@ -80,7 +80,7 @@
       <div class="recent-articles">
         <ul>
           <li v-for="i in list" v-bind:key="i.articleId">
-            <div class="t-classification ui label title">——---{{i.type}}---——</div>
+            <div class="t-classification ui label title">{{i.type}}</div>
             <router-link
               :to="{path:'/article', query: { articleId: i.articleId}}"
               target="_self"

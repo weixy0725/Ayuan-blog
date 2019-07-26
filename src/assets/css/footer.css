@@ -1,6 +1,18 @@
+.my-footer{
+    /* background: #f2f2f2; */
+    margin-bottom: -100px;
+    height:100px;
+}
+
+.footer-divide{
+    height: 1px;
+    border-bottom: 1px solid #dbdbdb;
+}
 .home-footer{
+    display: block;
+    /* background: #f2f2f2; */
     text-align: center;
     color:#727374;
-    margin-top:2%;
-    height:100px;
+    padding-top:20px;
+    height: 100%;
 }

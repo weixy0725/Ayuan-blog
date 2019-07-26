@@ -51,7 +51,7 @@ export default {
     ...mapGetters(["preloaderShow"])
   },
   methods: {
-     ...mapMutations(["changePreloaderShow"]),
+     ...mapMutations([ "changeOpenClass","changePreloaderShow"]),
     getArticle() {
       let _this = this;
       var parameters = {};
@@ -92,6 +92,7 @@ export default {
   },
   mounted() {
     this.getArticle();
+    this.changeOpenClass("");
   }
 };
 </script>

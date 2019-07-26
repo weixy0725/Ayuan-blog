@@ -7,7 +7,7 @@
     </div>
 </template>
 <script>
-import '@/assets/css/footer.css'
+import "@/assets/css/footer.css";
 export default {};
 </script>
 

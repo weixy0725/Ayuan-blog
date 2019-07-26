@@ -41,8 +41,12 @@
 }
 
 .ui.label.title {
-  background-color: #d1d1d1 !important;
-  border-color: #d1d1d1 !important;
-  /* color:#a1a1a1 !important; */
-  padding:0.35em 0;
+  background-color: #ebeef0 !important;
+  border-color: #d8d8d8 !important;
+  color:#a8a6a6 !important;
+  font-size:15px;
+  padding:0.5em 0;
+  border-radius: 0;
+  font-weight: 100;
+  opacity: 0.55;
 }
