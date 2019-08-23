@@ -64,14 +64,14 @@
     </div>
   </div>
 </template>
+<style src="@/assets/css/technology.css" scoped></style>
 <script>
-import "@/assets/css/technology.css";
 import "@/assets/css/labelUI.css";
 import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      articlesURL: this.host + "/articleManagement/articles",
+      articlesURL: this.host + "/articleManagement/blogArticles",
       classificationsURL: this.host + "/articleManagement/classification",
       selectOpen: "",
       selectShow: false,

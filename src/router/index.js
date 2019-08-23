@@ -6,6 +6,7 @@ import Design from '@/views/Design'
 import Other from '@/views/Other'
 import AboutMe from '@/views/AboutMe'
 import Article from '@/views/Article'
+import SearchResult from '@/views/SearchResult'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/article',
       name: 'Article',
       component: Article
+    },
+    {
+      path: '/searchResult',
+      name: 'SearchResult',
+      component: SearchResult
     }
   ]
 })

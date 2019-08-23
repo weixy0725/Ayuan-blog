@@ -116,14 +116,15 @@
     <!--最近内容结束-->
   </div>
 </template>
+<style src="@/assets/css/home.css" scoped>
+</style>
 <script>
-import "@/assets/css/home.css";
 import "@/assets/css/labelUI.css";
 import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      articleURL: this.host + "/articleManagement/articles",
+      articleURL: this.host + "/articleManagement/blogArticles",
       rmOneURL: "",
       rmTwoURL: "",
       rmThreeURL: "",

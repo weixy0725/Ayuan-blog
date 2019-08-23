@@ -78,6 +78,13 @@ button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="but
   }
 }
 
+/**当前加载动画手机浏览器无法显示，干脆隐藏掉*/
+@media (max-width: 500px) {
+  #preloader {
+      display: none;
+  }
+}
+
 /**
 过渡动画 end
 */
@@ -175,7 +182,7 @@ header start
   width: 45%;
   height: 60px;
   border: 1px solid #a8a8a8;
-  border-radius: 30px;
+  border-radius: 30px 0 0 30px;
   margin-left:5%;
   text-align: center;
   outline: none;
@@ -185,9 +192,9 @@ header start
 #searchBar .m-search button{
   display: inline-block;
   border: 1px solid #a8a8a8;
-  height: 66px;
+  height: 64px;
   border: 1px solid #a8a8a8;
-    border-radius: 33px;
+  border-radius: 0 30px 30px 0;
   width: 10%;
   background: #fff;
   cursor: pointer;
@@ -305,6 +312,7 @@ header start
     /* margin-top: 80px; */
     /* min-height: 100%; */
     z-index:99;
+    border-bottom: 1px solid #c4c4c47a;
   }
 
   #mo-nav .m-avatar {

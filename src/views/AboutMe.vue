@@ -7,9 +7,8 @@
         </div>
     </div>
 </template>
-
+<style src="@/assets/css/aboutMe.css" scoped></style>
 <script>
-import '@/assets/css/aboutMe.css'
 import { mapGetters, mapMutations } from "vuex";
 export default {
   methods: {

@@ -3,15 +3,14 @@
     <div class="header">
       <!--大分辨率的header-->
       <div class="max-header">
-        <img src="@/assets/img/sakura-flower.png" class="max-logo">
-        <img>
+        <!-- <img src="@/assets/img/sakura-flower.png" class="max-logo">
+        <img> -->
         <div class="max-header-nav">
           <ul>
             <li @click="toHome()">首页</li>
             <li @click="toTech()">技术栈</li>
             <li @click="toDesign()">插画与设计</li>
-            <li @click="toOther()">文学</li>
-            <li @click="toOther()">游记</li>
+            <li @click="toOther()">杂记</li>
             <li @click="toAboutMe()">About Me</li>
             <li @click="showSearch()" :class="searchOpenClass">
               <i class="iconfont icon-alisousuo"></i>
@@ -24,7 +23,7 @@
         <div id="fold-nav" :class="openClass" @click="open">
           <div class="icon"></div>
         </div>
-        <img src="@/assets/img/sakura-flower.png" class="min-logo">
+        <!-- <img src="@/assets/img/sakura-flower.png" class="min-logo"> -->
         <img>
       </div>
       <!--小分辨率header end-->
@@ -35,15 +34,14 @@
         <img src="http://39.105.221.186/touxiang.jpg">
       </div>
       <div class="m-search">
-        <input placeholder="输入搜索内容...">
-        <button><i class="iconfont icon-alisousuo"></i></button>
+        <input placeholder="输入搜索内容..." v-model="searchText">
+        <button @click="search()"><i class="iconfont icon-alisousuo"></i></button>
       </div>
       <div class="nav-list">
         <div @click="toHome()">首页</div>
         <div @click="toTech()">技术栈</div>
         <div @click="toDesign()">插画与设计</div>
-        <div @click="toOther()">文学</div>
-        <div @click="toOther()">游记</div>
+        <div @click="toOther()">杂记</div>
         <div @click="toAboutMe()">About Me</div>
         <div> </div>
       </div>
@@ -52,8 +50,8 @@
     <!--搜索工具栏-->
     <div id="searchBar" :class="searchOpenClass">
        <div class="m-search">
-        <input placeholder="输入搜索内容...">
-        <button><i class="iconfont icon-alisousuo"></i></button>
+        <input placeholder="输入搜索内容..." v-model="searchText">
+        <button @click="search()"><i class="iconfont icon-alisousuo"></i></button>
        </div>
     </div>
     <!--搜索工具栏 end-->
@@ -72,7 +70,8 @@ export default {
     return {
       //preloaderShow: true, //过渡动画显示/隐藏
       removeTimer: "", //过渡动画移除延时器
-      schShow: true
+      schShow: true,
+      searchText:""
     };
   },
   computed: {
@@ -113,6 +112,16 @@ export default {
         this.changeSearchOpenClass("");
         this.schShow = true;
       }
+    },
+    search(){
+        if(this.searchText!=""&&this.searchText.replace(/" "/g,"")!=""){
+          this.changeSearchOpenClass("");
+          this.schShow = true;
+          this.$router.push("/searchResult?text="+this.searchText);
+          this.searchText="";
+        }else{
+          this.$message.info("搜索内容不能为空");
+        }
     }
   },
   mounted() {

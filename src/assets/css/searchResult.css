@@ -1,0 +1,218 @@
+.result-page {
+    display: block;
+    margin-top: 150px;
+    width: 100%;
+    min-height:calc(100vh - 280px);
+}
+
+.m-search{
+    margin-top:5%;
+    display: block;
+    height: 100px;
+    width: 60%;
+    margin-left:25%; 
+}
+
+.m-search input {
+    display: inline-block;
+    width: 65%;
+    height: 60px;
+    border: 1px solid #a8a8a8;
+    border-radius: 30px 0 0 30px;
+    text-align: center;
+    outline: none;
+    vertical-align:middle;
+}
+  
+.m-search button{
+    display: inline-block;
+    border: 1px solid #a8a8a8;
+    height: 64px;
+    border: 1px solid #a8a8a8;
+    border-radius: 0 30px 30px 0;
+    width: 20%;
+    background: #fff;
+    cursor: pointer;
+    outline:none;
+    vertical-align:middle;
+}
+
+.m-search button:hover{
+    background: #d7f0fa;
+}
+
+@media (max-width: 991px) {
+
+    .m-search{
+        margin-top:5%;
+        display: block;
+        height: 100px;
+        width: 90%;
+        margin-left:10%; 
+    }
+    
+    .m-search input {
+        display: inline-block;
+        width: 65%;
+        height: 60px;
+        border: 1px solid #a8a8a8;
+        border-radius: 30px 0 0 30px;
+        text-align: center;
+        outline: none;
+        vertical-align:middle;
+    }
+      
+    .m-search button{
+        display: inline-block;
+        border: 1px solid #a8a8a8;
+        height: 64px;
+        border: 1px solid #a8a8a8;
+        border-radius: 0 30px 30px 0;
+        width: 22%;
+        background: #fff;
+        cursor: pointer;
+        outline:none;
+        vertical-align:middle;
+    }
+
+}
+
+.result-title{
+    font-weight: 300;
+    height: 50px;
+}
+
+.tech-articles {
+    display: block;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+  
+.tech-articles ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pagination-bar{
+    margin-top:8%;
+    margin-bottom: 2%;
+    width: 100%; 
+    text-align: center;
+  }
+  
+  .el-pager li.active {
+    color: #32aa66!important;
+  }
+  
+  .el-pager li:hover {
+    color: #32aa66!important;
+  }
+  
+  .el-pagination {
+    color: #727374;
+}
+
+.tech-list{
+    display: block;
+    margin-top:20px;
+}
+
+.tech-list .title {
+    margin-top:20px;
+    display: block;
+    width: 100%;
+    font-size: 19px;
+    color: #505152;
+    /* line-height: 30px; */
+    font-weight: 300;
+  }
+  
+  
+  .tech-list .title .title-content {
+    display: inline-block;
+    word-wrap: break-word;
+  }
+  
+  
+  .tech-list .content{
+    min-height: 20px;
+    text-indent: 2em;
+  }
+  
+  .tech-list .content,.article-footer{
+    display: block;
+    margin-top:15px;
+    color: #727374;
+    font-weight: 200;
+  }
+  
+  .tech-list .article-footer{
+    text-align: right;
+  }
+  
+  .tech-list .f-classification,.f-time,.eye,.message{
+     display: inline-block;
+     font-size:15px;
+  }
+  
+  .tech-list .f-time,.eye,.message{
+    margin-left:15px;
+  }
+  
+  .tech-list .divide{
+     display: block;
+     width:40%;
+     margin-left:30%;
+     margin-top:30px;
+     border-bottom:1px dashed #c7c8c9;
+  }
+  
+  .link-class{
+    text-decoration: none;
+  }
+  
+
+.content-detail{
+     font-size: 15px;
+     text-indent: 2em;
+     margin-top:10px;
+     width: 100%;
+     font-weight: 300;
+}
+
+.content-detail >>> img{
+    display: none;
+}
+
+.content-detail >>> h1{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.content-detail >>> h2{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.content-detail >>> h3{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.content-detail >>> h4{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.content-detail >>> h5{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.content-detail >>> h6{
+    font-size: 15px;
+    font-weight: 300;
+}

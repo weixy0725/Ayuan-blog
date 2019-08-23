@@ -22,16 +22,67 @@
         </div>
     </div>
     </div>
+     <div class="mes-class">
+      <div>
+        <el-button
+          type="info"
+          class="mes-button"
+          plain
+          @click="dialogVisible = true"
+        >留 言</el-button>
+        <ul style="list-style-type: none;">
+          <li v-for="i in list" v-bind:key="i.id">
+            <div v-if="i.type==0" class="response-class">
+              <label class="ui label blog-owner">作者</label>
+              <span style="padding-left:2em;font-size: 0.5em;">{{i.datetime}}</span>
+              <div class="response-content">
+                <label class="response-person">@{{i.ip}}</label>
+                {{i.message}}
+              </div>
+            </div>
+            <div v-else class="message-class">
+              <label class="ui label per">{{i.ip}}</label>
+              <span style="padding-left:2em;font-size: 0.5em;">{{i.datetime}}</span>
+              <div class="message-content">{{i.message}}</div>
+            </div>
+          </li>
+        </ul>
+        <div class="pagination-bar">
+      <el-pagination
+        layout="prev, pager, next"
+        :total="total"
+        :current-page="pageNumber"
+        :page-size="pageSize"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+      ></el-pagination>
+    </div>
+      </div>
+    </div>
+    <el-dialog title="留 言" :visible.sync="dialogVisible" width="50%" :modal-append-to-body="false">
+      <el-input
+        type="textarea"
+        :autosize="{ minRows: 8, maxRows: 16}"
+        placeholder="请输入内容"
+        v-model="textarea"
+      ></el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="info" @click="saveMessage()">留 言</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
+<style src="@/assets/css/article.css" scoped></style>
 <script>
-import "@/assets/css/article.css";
 import "@/assets/css/labelUI.css";
 import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
       articleURL: this.host + "/articleManagement/article",
+      saveMessageURL: this.host + "/messageManagement/message",
+      getMessageURL: this.host + "/messageManagement/message",
       articleName: "",
       articleContent: "",
       isOriginal:'',
@@ -88,11 +139,78 @@ export default {
     fomartTime(time){
       var str = time.split(" ");
       return str[0];
+    },
+    handleSizeChange(val) {
+      this.pageSize = val;
+      this.getMessage();
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      this.pageNumber = val;
+      this.getMessage();
+      console.log(`当前页: ${val}`);
+    },
+    saveMessage() {
+      var formData = new FormData();
+      if (this.textarea == "") {
+        this.$message.error("留言内容不可为空！");
+      } else {
+        formData.append("message", this.textarea);
+        formData.append("type", 1); //留言的type为1
+        formData.append("articleId", this.articleId);
+        this.$axios.post(this.saveMessageURL, formData).then(res => {
+          if (res.data.result.code == 0) {
+            this.dialogVisible = false;
+            this.$message.info("留言成功");
+            this.textarea = "";
+            this.getMessage();
+          } else if (res.data.result.code == 1) {
+            this.$message({
+              type: "warning",
+              message: res.data.result.info
+            });
+          } else if (res.data.result.code == -1) {
+            this.$message({
+              type: "warning",
+              message: res.data.result.developInfo
+            });
+          }
+        });
+      }
+    },
+    getMessage() {
+      let _this = this;
+      var parameters = {};
+      parameters["articleId"] = this.articleId;
+      parameters["pageIndex"]=this.pageNumber;
+      parameters["pageSize"]=this.pageSize;
+      this.$axios
+        .get(this.getMessageURL, {
+          params: parameters
+        })
+        .then(res => {
+          if (res.data.result.code == 0) {
+            this.list = res.data.array;
+            this.total = res.data.object.count;
+          } else if (res.data.result.code == 1) {
+            this.$router.push("/");
+            this.$message({
+              type: "warning",
+              message: res.data.result.info
+            });
+          } else if (res.data.result.code == -1) {
+            this.$message({
+              type: "warning",
+              message: res.data.result.developInfo
+            });
+          }
+        });
     }
   },
   mounted() {
     this.getArticle();
     this.changeOpenClass("");
+    this.getMessage();
   }
 };
 </script>
