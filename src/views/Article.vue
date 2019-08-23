@@ -34,7 +34,7 @@
           <li v-for="i in list" v-bind:key="i.id">
             <div v-if="i.type==0" class="response-class">
               <label class="ui label blog-owner">作者</label>
-              <span style="padding-left:2em;font-size: 0.5em;">{{i.datetime}}</span>
+              <span style="padding-left:10px;font-size:12px;">{{i.datetime}}</span>
               <div class="response-content">
                 <label class="response-person">@{{i.ip}}</label>
                 {{i.message}}
@@ -42,7 +42,7 @@
             </div>
             <div v-else class="message-class">
               <label class="ui label per">{{i.ip}}</label>
-              <span style="padding-left:2em;font-size: 0.5em;">{{i.datetime}}</span>
+              <span style="padding-left:10px;font-size:12px;">{{i.datetime}}</span>
               <div class="message-content">{{i.message}}</div>
             </div>
           </li>

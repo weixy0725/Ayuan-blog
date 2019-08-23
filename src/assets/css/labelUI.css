@@ -50,3 +50,15 @@
   font-weight: 100;
   opacity: 0.55;
 }
+
+.ui.label.blog-owner {
+  font-size: 12px;
+  background-color: #3a95be !important;
+  border-color: #3a95be !important;
+}
+ 
+.ui.label.per {
+  font-size: 12px;
+  background-color: #d3994d !important;
+  border-color: #d3994d !important;
+}
