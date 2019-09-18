@@ -15,37 +15,44 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta:{title:'Ayuan既往随叙-首页'}
     },
     {
       path: '/technology',
       name: 'Technology',
-      component: Technology
+      component: Technology,
+      meta:{title:'Ayuan既往随叙-技术栈'}
     },
     {
       path: '/design',
       name: 'Design',
-      component: Design
+      component: Design,
+      meta:{title:'Ayuan既往随叙-插画与设计'}
     },
     {
       path: '/other',
       name: 'Other',
-      component: Other
+      component: Other,
+      meta:{title:'Ayuan既往随叙-杂记'}
     },
     {
       path: '/aboutMe',
       name: 'AboutMe',
-      component: AboutMe
+      component: AboutMe,
+      meta:{title:'Ayuan既往随叙-关于我'}
     },
     {
       path: '/article',
       name: 'Article',
-      component: Article
+      component: Article,
+      meta:{title:'Ayuan既往随叙-文章'}
     },
     {
       path: '/searchResult',
       name: 'SearchResult',
-      component: SearchResult
+      component: SearchResult,
+      meta:{title:'Ayuan既往随叙-检索结果'}
     }
   ]
 })

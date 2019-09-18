@@ -62,3 +62,8 @@
   background-color: #d3994d !important;
   border-color: #d3994d !important;
 }
+
+.ui.label.tag {
+  background-color: #999590 !important;
+  border-color: #999590 !important;
+}

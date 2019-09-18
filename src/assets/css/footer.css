@@ -16,3 +16,15 @@
     padding-top:20px;
     height: 100%;
 }
+
+a{
+    text-decoration: none;
+    outline: none;
+    -moz-outline-style: none;
+    color:#727374;
+}
+
+.icp-link{
+    display: block;
+    margin-top:10px;
+}

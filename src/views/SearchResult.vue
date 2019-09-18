@@ -22,6 +22,7 @@
                 <div v-if="i.isOriginal==1" class="ui label own">原创</div>
                 <div v-if="i.isOriginal==0" class="ui label other">转载</div>
                 <div v-if="i.isOriginal==4" class="ui label learn">学习</div>
+                <div v-if="i.isOriginal==5" class="ui label tag">记录</div>
                 <div class="title-content" v-html="i.articleName"></div>
               </div>
               <div class="content" v-html="i.articleSummarize">

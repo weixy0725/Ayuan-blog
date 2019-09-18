@@ -15,6 +15,7 @@
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-totop": "^1.0.3",
+    "vue-wechat-title": "^2.0.5",
     "vuex": "^3.1.1"
   },
   "devDependencies": {

@@ -44,7 +44,7 @@
     <!--主页内容-->
     <!--推荐位-->
     <div class="recommend clearfix">
-      <h3>推 荐</h3>
+      <h3>近 况</h3>
       <div class="recommend-one" v-bind:style="{'background-image':'url('+rmOneURL+')'}">
         <router-link
           :to="{path:'/article', query: { articleId: rmOneId}}"
@@ -76,7 +76,7 @@
     <!--推荐位结束-->
     <!--最近内容-->
     <div class="recent">
-      <h3>近 况</h3>
+      <!-- <h3>近 况</h3> -->
       <div class="recent-articles">
         <ul>
           <li v-for="i in list" v-bind:key="i.articleId">
@@ -87,12 +87,14 @@
               class="link-class"
             >
               <div class="title">
+                <div class="title-content">
                 <div v-if="i.isOriginal==3" class="ui label copy">临摹</div>
                 <div v-if="i.isOriginal==2" class="ui label practice">练习</div>
                 <div v-if="i.isOriginal==1" class="ui label own">原创</div>
                 <div v-if="i.isOriginal==0" class="ui label other">转载</div>
                 <div v-if="i.isOriginal==4" class="ui label learn">学习</div>
-                <div class="title-content">{{i.articleName}}</div>
+                <div v-if="i.isOriginal==5" class="ui label tag">记录</div>
+                  {{i.articleName}}</div>
               </div>
               <div class="content">{{i.articleSummarize}}</div>
               <div class="article-footer">

@@ -26,15 +26,19 @@
               class="link-class"
             >
               <div class="title">
-                <div v-if="i.isOriginal==3" class="ui label copy">临摹</div>
+                <div class="title-content">
+                  <div v-if="i.isOriginal==3" class="ui label copy">临摹</div>
                 <div v-if="i.isOriginal==2" class="ui label practice">练习</div>
                 <div v-if="i.isOriginal==1" class="ui label own">原创</div>
                 <div v-if="i.isOriginal==0" class="ui label other">转载</div>
                 <div v-if="i.isOriginal==4" class="ui label learn">学习</div>
-                <div class="title-content">{{i.articleName}}</div>
+                <div v-if="i.isOriginal==5" class="ui label tag">记录</div>
+                  {{i.articleName}}
+                  </div>
               </div>
               <div class="content">
-                {{i.articleSummarize}}
+                <div class="show-pic" v-bind:style="{'background-image':'url('+imgURLHeader+i.cover+')'}"></div>
+                <div class="show-content">{{i.articleSummarize}}</div>
               </div>
               <div class="article-footer">
                 <div class="f-classification">{{i.classification}}</div>
@@ -84,6 +88,9 @@ export default {
       list: [],
       classificationId:-1
     };
+  },
+  computed: {
+    ...mapGetters(["imgURLHeader"])
   },
   methods: {
     ...mapMutations(["changeOpenClass", "changePreloaderShow"]),
