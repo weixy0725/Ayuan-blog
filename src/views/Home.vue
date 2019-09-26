@@ -5,7 +5,7 @@
         <div class="test">
           <!-- 左右倾斜 -->
           <!-- <div class="slant-left"></div>
-          <div class="slant-right"></div> -->
+          <div class="slant-right"></div>-->
           <div class="own-panel">
             <div>
               <router-link :to="{path:'/aboutMe'}" target="_self" class="link-class">
@@ -45,42 +45,74 @@
     <!--推荐位-->
     <div class="recommend clearfix">
       <h3>近 况</h3>
-      <div class="recommend-one" v-bind:style="{'background-image':'url('+rmOneURL+')'}">
-        <router-link
-          :to="{path:'/article', query: { articleId: rmOneId}}"
-          target="_self"
-          class="link-class"
-        >
-          <span class="foverlay">{{rmOneTitle}}</span>
-        </router-link>
+      <div class="recommend-large">
+        <div class="recommend-one" v-bind:style="{'background-image':'url('+rmOneURL+')'}">
+          <router-link
+            :to="{path:'/article', query: { articleId: rmOneId}}"
+            target="_self"
+            class="link-class"
+          >
+            <span class="foverlay">{{rmOneTitle}}</span>
+          </router-link>
+        </div>
+        <div class="recommend-two" v-bind:style="{'background-image':'url('+rmTwoURL+')'}">
+          <router-link
+            :to="{path:'/article', query: { articleId: rmTwoId}}"
+            target="_self"
+            class="link-class"
+          >
+            <span class="foverlay">{{rmTwoTitle}}</span>
+          </router-link>
+        </div>
+        <div class="recommend-three" v-bind:style="{'background-image':'url('+rmThreeURL+')'}">
+          <router-link
+            :to="{path:'/article', query: { articleId: rmThreeId}}"
+            target="_self"
+            class="link-class"
+          >
+            <span class="foverlay">{{rmThreeTitle}}</span>
+          </router-link>
+        </div>
       </div>
-      <div class="recommend-two" v-bind:style="{'background-image':'url('+rmTwoURL+')'}">
-        <router-link
-          :to="{path:'/article', query: { articleId: rmTwoId}}"
-          target="_self"
-          class="link-class"
-        >
-          <span class="foverlay">{{rmTwoTitle}}</span>
-        </router-link>
-      </div>
-      <div class="recommend-three" v-bind:style="{'background-image':'url('+rmThreeURL+')'}">
-        <router-link
-          :to="{path:'/article', query: { articleId: rmThreeId}}"
-          target="_self"
-          class="link-class"
-        >
-          <span class="foverlay">{{rmThreeTitle}}</span>
-        </router-link>
+      <!-- <el-carousel :interval="4000" type="card" height="350px" class="card-list">
+        <el-carousel-item v-for="item in picList" :key="item.articleId">
+         <router-link
+              :to="{path:'/article', query: { articleId: item.articleId}}"
+              target="_self"
+              class="link-class"
+            > <div
+            class="card"
+            v-bind:style="{'background-image':'url('+imgURLHeader+item.cover+')'}"
+          >
+          </div></router-link>
+        </el-carousel-item>
+      </el-carousel>-->
+
+      <div class="block">
+        <el-carousel height="250px">
+          <el-carousel-item v-for="item in picList" :key="item.articleId">
+            <router-link
+              :to="{path:'/article', query: { articleId: item.articleId}}"
+              target="_self"
+              class="link-class"
+            > <div
+            class="card"
+            v-bind:style="{'background-image':'url('+imgURLHeader+item.cover+')'}"
+          >
+          </div></router-link>
+          </el-carousel-item>
+        </el-carousel>
       </div>
     </div>
     <!--推荐位结束-->
     <!--最近内容-->
     <div class="recent">
+      <div class="divide"></div>
       <!-- <h3>近 况</h3> -->
       <div class="recent-articles">
         <ul>
           <li v-for="i in list" v-bind:key="i.articleId">
-            <div class="t-classification ui label title">{{i.type}}</div>
+            <!-- <div class="t-classification ui label title">{{i.type}}</div> -->
             <router-link
               :to="{path:'/article', query: { articleId: i.articleId}}"
               target="_self"
@@ -88,15 +120,26 @@
             >
               <div class="title">
                 <div class="title-content">
-                <div v-if="i.isOriginal==3" class="ui label copy">临摹</div>
-                <div v-if="i.isOriginal==2" class="ui label practice">练习</div>
-                <div v-if="i.isOriginal==1" class="ui label own">原创</div>
-                <div v-if="i.isOriginal==0" class="ui label other">转载</div>
-                <div v-if="i.isOriginal==4" class="ui label learn">学习</div>
-                <div v-if="i.isOriginal==5" class="ui label tag">记录</div>
-                  {{i.articleName}}</div>
+                  <div v-if="i.isOriginal==3" class="ui label copy">临摹</div>
+                  <div v-if="i.isOriginal==2" class="ui label practice">练习</div>
+                  <div v-if="i.isOriginal==1" class="ui label own">原创</div>
+                  <div v-if="i.isOriginal==0" class="ui label other">转载</div>
+                  <div v-if="i.isOriginal==4" class="ui label learn">学习</div>
+                  <div v-if="i.isOriginal==5" class="ui label tag">记录</div>
+                  {{i.articleName}}
+                  <span class="article-type">[ {{i.type}} ]</span>
+                </div>
               </div>
-              <div class="content">{{i.articleSummarize}}</div>
+              <div class="content">
+                <div v-if="i.cover!=''">
+                  <div
+                    class="show-pic"
+                    v-bind:style="{'background-image':'url('+imgURLHeader+i.cover+')'}"
+                  ></div>
+                  <div class="show-content">{{i.articleSummarize}}</div>
+                </div>
+                <div v-else>{{i.articleSummarize}}</div>
+              </div>
               <div class="article-footer">
                 <div class="f-classification">{{i.classification}}</div>
                 <div class="f-time">{{fomartTime(i.datetime)}}</div>
@@ -110,7 +153,7 @@
                 </div>
               </div>
             </router-link>
-            <!-- <div class="divide"></div> -->
+            <div class="divide"></div>
           </li>
         </ul>
       </div>
@@ -136,7 +179,8 @@ export default {
       rmOneId: "",
       rmTwoId: "",
       rmThreeId: "",
-      list: []
+      list: [],
+      picList: []
     };
   },
   computed: {
@@ -171,6 +215,7 @@ export default {
               this.rmOneId = res.data.array[0].articleId;
               this.rmTwoId = res.data.array[1].articleId;
               this.rmThreeId = res.data.array[2].articleId;
+              this.picList = res.data.array;
             } else {
               this.list = res.data.array;
             }

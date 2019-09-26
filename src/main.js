@@ -20,7 +20,7 @@ Vue.use(vueToTop)
 Vue.use(VueWechatTitle)
 
 Vue.prototype.$axios = axios;
-Vue.prototype.host = '';
+Vue.prototype.host = '/api';
 
 Vue.config.productionTip = false
 

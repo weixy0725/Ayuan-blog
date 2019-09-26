@@ -37,8 +37,11 @@
                   </div>
               </div>
               <div class="content">
-                <div class="show-pic" v-bind:style="{'background-image':'url('+imgURLHeader+i.cover+')'}"></div>
-                <div class="show-content">{{i.articleSummarize}}</div>
+                 <div v-if="i.cover!=''">
+                  <div class="show-pic" v-bind:style="{'background-image':'url('+imgURLHeader+i.cover+')'}"></div>
+                  <div class="show-content">{{i.articleSummarize}}</div>
+                </div>
+                <div v-else>{{i.articleSummarize}}</div>
               </div>
               <div class="article-footer">
                 <div class="f-classification">{{i.classification}}</div>

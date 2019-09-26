@@ -11,6 +11,7 @@
             <li @click="toTech()">技术栈</li>
             <li @click="toDesign()">插画与设计</li>
             <li @click="toOther()">杂记</li>
+            <li @click="toFile()">归档</li>
             <li @click="toAboutMe()">About Me</li>
             <li @click="showSearch()" :class="searchOpenClass">
               <i class="iconfont icon-alisousuo"></i>
@@ -31,17 +32,23 @@
     <!--左侧导航栏-->
     <div id="mo-nav" :class="openClass">
       <div class="m-avatar">
+        <router-link :to="{path:'/aboutMe'}" target="_self" class="link-class">
         <img src="http://39.105.221.186/touxiang.jpg">
+        </router-link>
       </div>
       <div class="m-search">
-        <input placeholder="输入搜索内容..." v-model="searchText">
-        <button @click="search()"><i class="iconfont icon-alisousuo"></i></button>
+        <!-- <input placeholder="输入搜索内容..." v-model="searchText">
+        <button @click="search()"><i class="iconfont icon-alisousuo"></i></button> -->
+        <el-input placeholder="输入搜索内容..." v-model="searchText" class="input-with-select">
+        <el-button slot="append" icon="el-icon-search" @click="search()"></el-button>
+        </el-input>
       </div>
       <div class="nav-list">
         <div @click="toHome()">首页</div>
         <div @click="toTech()">技术栈</div>
         <div @click="toDesign()">插画与设计</div>
         <div @click="toOther()">杂记</div>
+        <div @click="toFile()">归档</div>
         <div @click="toAboutMe()">About Me</div>
         <div> </div>
       </div>
@@ -96,6 +103,9 @@ export default {
     },
     toAboutMe() {
       this.$router.push("/aboutMe");
+    },
+    toFile(){
+      this.$router.push("/file");
     },
     open() {
       if (this.openClass=="") {

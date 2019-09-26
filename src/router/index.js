@@ -7,6 +7,7 @@ import Other from '@/views/Other'
 import AboutMe from '@/views/AboutMe'
 import Article from '@/views/Article'
 import SearchResult from '@/views/SearchResult'
+import File from '@/views/File'
 
 Vue.use(Router)
 
@@ -53,6 +54,12 @@ export default new Router({
       name: 'SearchResult',
       component: SearchResult,
       meta:{title:'Ayuan既往随叙-检索结果'}
+    },
+    {
+      path: '/file',
+      name: 'File',
+      component: File,
+      meta:{title:'Ayuan既往随叙-归档'}
     }
   ]
 })

@@ -127,7 +127,7 @@ header start
 }
 
 .max-header-nav {
-  width: calc(100% - 300px);
+  width: calc(100% - 150px);
   display: inline-block;
 }
 
@@ -335,8 +335,10 @@ header start
   #mo-nav .m-search{
     display: block;
     height: 36px;
+    width: 80%;
+    margin-left:10%;
   }
-  #mo-nav .m-search input {
+  /* #mo-nav .m-search input {
     display: inline-block;
     width: 80%;
     height: 32px;
@@ -363,7 +365,7 @@ header start
 
   #mo-nav .m-search button:hover{
     background: #d7f0fa;
-  }
+  } */
 
   #mo-nav .nav-list {
     padding-top:18px;
@@ -397,6 +399,10 @@ header start
   #searchBar.open{
     display: none;
   }
+}
+
+.link-class{
+  text-decoration: none;
 }
 
 /**

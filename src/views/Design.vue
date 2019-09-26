@@ -26,7 +26,9 @@
               target="_self"
               class="link-class"
           >
-          <div class="pic-bg" v-bind:style="{'background-image':'url('+imgURLHeader+i.cover+')'}"></div>
+          <div class="pic-bg" v-bind:style="{'background-image':'url('+imgURLHeader+i.cover+')'}">
+            <span class="foverlay"></span>
+          </div>
           <div class="pic-bar">
             <div class="pic-title">
               <div class="pic-title-content">{{i.articleName}}</div>

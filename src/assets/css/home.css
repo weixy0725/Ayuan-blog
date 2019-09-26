@@ -123,8 +123,13 @@
   margin-top: 3%;
   margin-left: 15%;
   margin-right: 15%;
-  height: 340px;
+  height: 330px;
 }
+
+/* .card-list{
+  margin-left: 12%;
+  margin-right: 12%;
+} */
 
 .recommend h3 {
   font-size: 15px;
@@ -171,6 +176,18 @@
   border-radius: 2%;
   border:1px solid #eaeaeb;
   float:left;
+}
+
+.card{
+  /* box-sizing: border-box;
+  margin-top: 15px;
+  
+  margin-left: 1%; */
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  /* border:1px solid #eaeaeb;
+  float:left; */
 }
 
 .clearfix{overflow:auto;_height:1%}/*浮动闭合 _height针对ie6,好神奇*/
@@ -220,6 +237,7 @@
   margin-top: 3%;
   margin-left: 15%;
   margin-right: 15%;
+  margin-bottom: 3%;
 }
 
 .recent h3 {
@@ -271,11 +289,18 @@ li {
   display: inline-block;
   word-wrap: break-word;
   font-weight: 550;
-  color:#737374;
+  color: #727374;
+  font-size:18px;
+}
+.article-type{
+  font-weight: 200;
+  font-size:15px;
 }
 
 .recent .content{
-  min-height: 50px;
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
   text-indent: 2em;
 }
 
@@ -301,8 +326,8 @@ li {
 
 .recent .divide{
    display: block;
-   width:70%;
-   margin-left:15%;
+   width:100%;
+   /* margin-left:15%; */
    margin-top:30px;
    border-bottom:1px dashed #c7c8c9;
 }
@@ -316,4 +341,72 @@ li {
 
 .link-class{
   text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .card-list{
+    margin-left: 0%;
+    margin-right:0%;
+  }
+}
+
+@media (max-width: 480px) {
+  .recent .f-classification{
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  
+}
+
+.show-pic{
+  display:inline-block;
+  width:25%;
+  height: 140px;
+  margin-left:0px;
+  float: left;
+  border: 1px solid #e6e6e6;
+  background-size:cover;
+  border-radius: 2%
+ }
+
+ .show-content{
+   display:inline-block;
+   width:70%;
+   margin-left: 10px;
+ }
+
+ @media (max-width: 767px) {
+  .show-pic{
+   display: block;
+   float: none;
+   width:100%;
+   height: 200px;
+   background-size: cover;
+  }
+
+  .show-content{
+    display:block;
+    width:100%;
+    margin-top: 5px;
+    margin-left: 0px;
+  }
+}
+
+.recommend-large{
+  display: block;
+}
+
+.block{
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .recommend-large{
+    display: none;
+  }
+
+  .block{
+    display: block;
+  }
 }
